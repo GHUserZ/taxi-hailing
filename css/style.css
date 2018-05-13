@@ -179,7 +179,7 @@ html, body { height: 100%; }
 
 .mui-popup-input input { border: none; background: transparent; border-bottom: 1px solid #ebebeb; height: 30px; color: #4a4c5b; padding: 0; }
 
-.mapBox { width: 100%; height: 100%; position: absolute; top: 0; left: 100%; transition: 0.3s ease; z-index: 99; }
+.mapBox { display: none; width: 100%; height: 100%; position: absolute; top: 0; z-index: 99; }
 .mapBox .mapSearch { position: absolute; top: 0; height: 50px; width: 100%; background: #fff; z-index: 100; font-size: 14px; color: #4a4c5b; line-height: 50px; }
 .mapBox .mapSearch input { height: 50px; font-size: 14px; color: #4a4c5b; border-color: #fff; }
 .mapBox .cityBox { width: 20%; }

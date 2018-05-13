@@ -42,21 +42,14 @@ function phoneDialog(){
 	var btnArray = ['确定'];
 	mui.prompt('请输入换乘车主联系方式', '请输入手机号', ' ', btnArray, function(e) {
 		if(e.index == 0) {
-			document.getElementById("phone").innerText = e.value
+			if(e.value != ''){
+				var str = e.value;
+				document.getElementById("phone").innerText ="尾数"+str.substr(str.length-4);
+			}
 		}
 	});
 	document.querySelector('.mui-popup-input input').type = 'number';
 }
-//换乘车人联系方式
-//function phoneDialog(){
-//	var btnArray = ['确定'];
-//	mui.prompt('请输入换乘车主联系方式', '请输入手机号', ' ', btnArray, function(e) {
-//		if(e.index == 1) {
-//			document.getElementById("phone").innerText = e.value
-//		}
-//	});
-//	document.querySelector('.mui-popup-input input').type = 'number';
-//}
 //乘车人数
 function personNum() {
 	var picker = new mui.PopPicker();
@@ -82,7 +75,7 @@ function personNum() {
 
 //显示地图
 function showMap(el){
-	$('.mapBox').css({'left':0})
+	$('.mapBox').css({'left':0,'display':'block'})
 	setTimeout(function() {
 		windowMapBusiness.autoComplete('inputAddress',el);
 		windowMapBusiness.initMap('allmap', '深圳');
@@ -90,7 +83,7 @@ function showMap(el){
 }
 
 function hideMap(){
-	$('.mapBox').css({'left':'100%'});
+	$('.mapBox').css({'left':'100%','display':'none'});
 }
 
 $('.selectBox').on('change',function(){
