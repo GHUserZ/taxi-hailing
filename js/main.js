@@ -2,15 +2,36 @@
 mui(".tab-wrapper").on("tap", "li", tabStyle);
 mui('.taxi-ride').on('tap', '.taxi-ride-num', personNum);
 mui('.taxi-ride').on('tap', '.taxi-ride-person', phoneDialog);
-//mui('.location').on('tap', '#startLocation', showMap);
-//mui('.location').on('tap', '#endLocation', showMap);
 mui('.cancelBox').on('tap', '.cancel', hideMap);
+mui('.navigator').on('tap', '.avatar', loginDialog);
+mui('.login-popup').on('tap', '.close', hideLogin);
+//点击显示地图起始点
 $('body').delegate('#startLocation','touchend',function(){
 	showMap('startLocation');
 });
+//点击显示地图终点
 $('body').delegate('#endLocation','touchend',function(){
 	showMap('endLocation');
 });
+//登录弹框
+function loginDialog(){
+	var btnArray = ['取消','确定'];
+	mui.prompt('登录', '请输入手机号', ' ', btnArray, function(e) {
+		if(e.index == 1) {
+			$('.login-popup').show();
+			$('.login-popup-mask').show();
+			$('.login-popup input').focus();
+		}
+	});
+	document.querySelector('.mui-popup-input input').type = 'number';
+}
+//隐藏验证码弹框
+function hideLogin(){
+	$('.login-popup').hide();
+	$('.login-popup-mask').hide();
+	$('.login-popup input').val('');
+}
+
 //tab样式
 function tabStyle() {
 	$(this).addClass('link-active').siblings().removeClass('link-active');
@@ -20,12 +41,22 @@ function tabStyle() {
 function phoneDialog(){
 	var btnArray = ['确定'];
 	mui.prompt('请输入换乘车主联系方式', '请输入手机号', ' ', btnArray, function(e) {
-		if(e.index == 1) {
+		if(e.index == 0) {
 			document.getElementById("phone").innerText = e.value
 		}
 	});
 	document.querySelector('.mui-popup-input input').type = 'number';
 }
+//换乘车人联系方式
+//function phoneDialog(){
+//	var btnArray = ['确定'];
+//	mui.prompt('请输入换乘车主联系方式', '请输入手机号', ' ', btnArray, function(e) {
+//		if(e.index == 1) {
+//			document.getElementById("phone").innerText = e.value
+//		}
+//	});
+//	document.querySelector('.mui-popup-input input').type = 'number';
+//}
 //乘车人数
 function personNum() {
 	var picker = new mui.PopPicker();

@@ -55,6 +55,16 @@
 					<div class="taxi-eta mui-text-center border-bottom-1px">
 				      <span>“附近有10辆车可呼叫”</span>
 					</div>
+					<div class="taxi-price mt-20 display-box mui-text-center">
+						<div class="span5 carpool">
+							<span class="name">拼车</span>
+							<p class="taxi-price-num">高峰价<span>60</span>元</p>
+						</div>	
+						<div class="span5 notCarpool">
+							<span class="name">不拼车</span>
+							<p class="taxi-price-num">高峰价<span>110</span>元</p>
+						</div>	
+					</div>
 					<div class="taxi-send-btn">
 						<button type="button " class="mui-btn mui-btn-block mui-btn-primary ">呼叫拼车</button>
 					</div>
@@ -82,6 +92,21 @@
 			</div>
 			<div id="allmap" class="allmap"></div>
 		</div>
+		<div class="login-popup-mask" ></div>
+		<div class="login-popup">
+			<div class="pop-slogin">
+				<div class="phone-wrapper">
+					<h2 class="title">输入验证码</h2>
+					<div class="phone">验证码已发送至18680362842</div>
+				</div>
+				<div class="user-input user-input-hook">
+					<span></span> <span></span> <span></span> <span></span>
+					<input type="number" maxlength="4">
+				</div>
+				<!--<div class="hidden-input"><input type="tel" maxlength="4" class="hidden-input-hook"></div>-->
+			</div>
+			<div class="close"><span></span></div>
+		</div>
 		<script type="text/javascript " src="js/lib/mui.min.js "></script>
 		<script type="text/javascript" src="js/lib/mui.picker.js" ></script>
 		<script type="text/javascript" src="js/lib/mui.poppicker.js" ></script>
@@ -89,6 +114,17 @@
 		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUHewhg0KDCnZa5emK9hxRib"></script>
 		<script type="text/javascript" src="js/map.js" ></script>
 		<script src="js/main.js "></script>
+		<script>
+			$(function(){
+				$('.login-popup input').on('keyup',function(){
+					var length =$(this).val().length;
+					if(length===4){
+						hideLogin();
+						window.location.href = 'protocol.html'
+					}
+				});
+			});
+		</script>
 	</body>
 
 </html>

@@ -122,7 +122,7 @@ html, body { height: 100%; }
 .nav-wrapper { position: relative; z-index: 50; display: -ms-flexbox; display: flex; width: 100%; height: 54px; background: #fff; }
 .nav-wrapper.shadow { box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12); }
 
-.avatar-wrapper { position: absolute; left: 0; width: 50px; padding-top: 15px; z-index: 50; }
+.avatar-wrapper { position: absolute; left: 0; width: 50px; padding-top: 15px; z-index: 51; }
 .avatar-wrapper .avatar { text-align: center; }
 
 .tab-wrapper { position: relative; z-index: 50; line-height: 54px; overflow: hidden; white-space: nowrap; -ms-flex: 1; flex: 1; text-align: center; }
@@ -167,7 +167,7 @@ html, body { height: 100%; }
 
 .mui-btn { padding: 10px 0; }
 
-.taxi-send-btn { margin-top: 20px; padding: 0 10px; }
+.taxi-send-btn { margin-top: 10px; padding: 0 10px; }
 
 .radius-box { border: 2px solid #4a4c5b; width: 50px; height: 50px; border-radius: 100px; line-height: 50px; color: #4a4c5b; }
 
@@ -184,10 +184,44 @@ html, body { height: 100%; }
 .mapBox .mapSearch input { height: 50px; font-size: 14px; color: #4a4c5b; border-color: #fff; }
 .mapBox .cityBox { width: 20%; }
 .mapBox .cityBox .mui-icon-arrowdown { position: absolute; right: -10px; top: 14px; }
-.mapBox .inputBox { width: 80%; }
+.mapBox .inputBox { width: 100%; }
 .mapBox .cancelBox { position: absolute; right: 20px; font-size: 14px; }
 .mapBox .cancelBox a { color: #4a4c5b; }
 .mapBox .allmap { width: 100%; height: 100%; }
+
+.taxi-price { font-size: 14px; color: #999; }
+.taxi-price .taxi-price-num { padding-top: 5px; color: #999; }
+.taxi-price .taxi-price-num span { font-size: 25px; }
+
+.carpool { color: #007aff; }
+.carpool .taxi-price-num { color: #007aff; }
+
+.login-popup-mask { display: none; position: fixed; z-index: 600; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4); }
+
+.login-popup { display: none; position: absolute; left: 50%; top: 50%; z-index: 666; width: 267px; box-sizing: border-box; border-radius: 16px; background: #fff; font-size: 14px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; transform: translate(-50%, -50%); }
+.login-popup input { outline: none; border: none; background: transparent; }
+.login-popup .close { position: absolute; right: 2px; top: 2px; padding: 8px; }
+.login-popup .close > span { display: inline-block; width: 12px; height: 12px; background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUJDMDk1Q0ZEODc5MTFFNUFDRDE4N0I0NzBENTMwRkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUJDMDk1RDBEODc5MTFFNUFDRDE4N0I0NzBENTMwRkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCRjEzRjc3QUQ4NzgxMUU1QUNEMTg3QjQ3MEQ1MzBGQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1QkMwOTVDRUQ4NzkxMUU1QUNEMTg3QjQ3MEQ1MzBGQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvlDFyMAAAEESURBVHjapJXRCoIwFIbnMbrxQuhxggi6K0hC6DEV6sKu7KZn6BWqB0iv+wcThs15tnPgV3Du+3RzM6mq6qmU+iAF0qnAKsvy71pd1zlOFyQnHN7IDrkhmRKWgTfIFnlpwQl5IBupxIKvkTty1oIvcpBKHPAjhq8n0y6STMF1G1n3RUl88LEgRuKFuwQhkln4lIAjYcF9Ap+EDde1mJnDQdJYkpQL5whcEl2t2Vr6uc7E/NRTk6GWSMLpyBHYY96GrhMKhBfjicdCy2IFLnhv5mTPlVAgfKiOK6EIeJCEIuFsCQngwy/TKyEJnCMhKXxOogVXKdwjqew3EMEdEv3Aq58AAwDhrKbpP7oZmgAAAABJRU5ErkJggg=="); background-size: 12px 12px; }
+
+.pop-slogin { text-align: center; padding: 20px 0; }
+.pop-slogin .title { font-size: 16px; color: #333; margin-bottom: 7px; font-weight: normal; }
+.pop-slogin .phone { font-size: 14px; color: #999; padding: 10px 0; }
+.pop-slogin .user-input { margin: 10px 0px; position: relative; background-color: #fff; z-index: 601; }
+.pop-slogin .user-input > span { display: inline-block; box-sizing: border-box; width: 50px; height: 50px; line-height: 50px; margin-right: 5px; vertical-align: middle; border: 1px solid #e5e5e5; border-radius: 2px; text-align: center; font-size: 26px; color: #333; overflow: hidden; }
+.pop-slogin .user-input input { position: absolute; z-index: 0; width: 280px; height: 50px; left: 0; left: 10px; letter-spacing: 39px; font-size: 30px; text-indent: 13.4px; }
+
+.bgFFF { background-color: #FFFFFF; }
+
+.protocol { padding: 20px 20px 10px; background: #fff; }
+.protocol .title { font-size: 18px; color: #4a4c5b; text-align: center; margin-bottom: 10px; }
+.protocol p { font-size: 14px; line-height: 25px; margin: 0; color: #999; text-indent: 25px; }
+.protocol .agree { font-size: 14px; color: #4a4c5b; }
+.protocol .agree .label { padding-left: 45px; }
+.protocol .agree input[type=checkbox] { left: 12px; }
+
+.protocol-bottom { height: 50px; line-height: 50px; background: #fff; }
+.protocol-bottom .mui-btn { line-height: 1; }
+.protocol-bottom > div { padding: 0 30px; }
 
 /**
 * 閫夋嫨鍒楄〃鎻掍欢
