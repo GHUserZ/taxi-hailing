@@ -53,19 +53,7 @@ function phoneDialog(){
 //乘车人数
 function personNum() {
 	var picker = new mui.PopPicker();
-	var data = [{
-		value: '1',
-		text: '1位'
-	}, {
-		value: '2',
-		text: '2位'
-	}, {
-		value: '3',
-		text: '3位'
-	}, {
-		value: '4',
-		text: '4位'
-	}];
+	var data=[{value:'1',text:'1位'},{value:'2',text:'2位'},{value:'3',text:'3位'},{value:'4',text:'4位'}];
 	var personNum = document.getElementById('ccrs');
 	picker.setData(data);
 	picker.show(function(selectItems) {
