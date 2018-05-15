@@ -225,6 +225,11 @@ body,html{height:100%}
 .btn-group{width:100%;position:fixed;bottom:20px}
 .btn-group .btn-group-item{padding:0 30px}
 .btn-group .mui-btn{font-size:14px}
+p.wxts{font-size:12px;color:#999}
+.underway-driver-info .avatar{margin:0 auto 10px}
+.underway-driver-info .driver-info-right,.underway-driver-info .plate-number{margin:auto}
+.underway-driver-info .taxidrivers-info{position:absolute;right:-148px;top:15px;width:160px}
+.underway-driver-info .driver-info-right .name{font-size:18px;line-height:32px}
 .mui-pciker-list li,.mui-picker,.mui-picker-inner{box-sizing:border-box;overflow:hidden}
 .mui-picker{background-color:#ddd;position:relative;height:200px;border:1px solid rgba(0,0,0,.1);-webkit-user-select:none;user-select:none}
 .mui-dtpicker,.mui-poppicker{left:0;background-color:#eee;width:100%}
