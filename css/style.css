@@ -1,18 +1,14 @@
 @charset "UTF-8";
 .mui-icon-extra,a{text-decoration:none}
-.avatar-wrapper .avatar,.tab-wrapper{text-align:center}
+.avatar-wrapper .avatar,.tab-wrapper,.tc{text-align:center}
 .location-field,.mui-pciker-list li{white-space:nowrap;text-overflow:ellipsis}
 body{font-family:"Segoe UI","Microsoft YaHei","Lucida Grande",Helvetica,Arial,FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif}
 li,ul{list-style:none;margin:0;padding:0}
 a{color:#409cf7;cursor:pointer}
 .clearfix:after{content:"";display:block;clear:both}
 .clearfix{zoom:1;clear:both}
-.dnone{display:none}
 .cRed{color:#f44e46}
 .cBlue{color:#27974b}
-.c666{color:#666}
-.c333{color:#333}
-.c999{color:#999}
 .fl{float:left}
 .fr,.mui-dtpicker-header button:last-child{float:right}
 .mt-5{margin-top:5px}
@@ -226,6 +222,9 @@ body,html{height:100%}
 .driver-prompt{padding:10px}
 .driver-prompt p{font-size:14px;color:#4a4c5b;margin:0}
 .driver-prompt .date{color:#007aff}
+.btn-group{width:100%;position:fixed;bottom:20px}
+.btn-group .btn-group-item{padding:0 30px}
+.btn-group .mui-btn{font-size:14px}
 .mui-pciker-list li,.mui-picker,.mui-picker-inner{box-sizing:border-box;overflow:hidden}
 .mui-picker{background-color:#ddd;position:relative;height:200px;border:1px solid rgba(0,0,0,.1);-webkit-user-select:none;user-select:none}
 .mui-dtpicker,.mui-poppicker{left:0;background-color:#eee;width:100%}
